@@ -22,7 +22,6 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-
 version = "2019.2"
 
 project {
@@ -40,6 +39,7 @@ object Build : BuildType({
     steps {
         maven {
             goals = "clean package"
+            dockerImage = "maven:3.6.0-jdk-8"
         }
     }
     triggers {
