@@ -39,7 +39,6 @@ object Build : BuildType({
     steps {
         maven {
             goals = "clean package"
-
         }
     }
     triggers {
