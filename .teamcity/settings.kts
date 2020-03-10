@@ -27,6 +27,10 @@ version = "2019.2"
 object Build : BuildType({
     name = "Build"
     artifactRules = "target/*jar"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
     steps {
         maven {
             goals = "clean package"
