@@ -39,6 +39,7 @@ object Build : BuildType({
     steps {
         maven {
             goals = "clean package"
+            mavenVersion = auto()
         }
     }
 })
