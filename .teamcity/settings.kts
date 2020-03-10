@@ -24,11 +24,6 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 
 version = "2019.2"
 
-project {
-    vcsRoot(PetclinicVcs)
-    buildType(Build)
-}
-
 object Build : BuildType({
     name = "Build"
     artifactRules = "target/*jar"
