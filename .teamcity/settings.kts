@@ -48,12 +48,6 @@ object Build : BuildType({
     }
 })
 
-object PetclinicVcs : GitVcsRoot({
-    name = "PetclinicVcs"
-    url = "https://github.com/spring-projects/spring-petclinic.git"
-})
-
-
 fun wrapWithFeature(buildType: BuildType, featureBlock: BuildFeatures.() -> Unit): BuildType {
     buildType.features {
         featureBlock()
