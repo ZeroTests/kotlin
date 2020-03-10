@@ -27,18 +27,9 @@ version = "2019.2"
 object Build : BuildType({
     name = "Build"
     artifactRules = "target/*jar"
-
-    vcs {
-        root(PetclinicVcs)
-    }
     steps {
         maven {
             goals = "clean package"
-        }
-    }
-    triggers {
-        vcs {
-            groupCheckinsByCommitter = true
         }
     }
 })
