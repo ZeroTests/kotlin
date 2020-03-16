@@ -29,20 +29,6 @@ project {
     buildType(Build)
 }
 
-object Build : BuildType({
-    name = "Build"
-    artifactRules = "target/*jar"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-    steps {
-        maven {
-            goals = "clean package"
-            mavenVersion = auto()
-        }
-    }
-})
 
 fun wrapWithFeature(buildType: BuildType, featureBlock: BuildFeatures.() -> Unit): BuildType {
     buildType.features {
