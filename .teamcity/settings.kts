@@ -21,6 +21,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 (Plugins -> teamcity-configs -> teamcity-configs:generate), the
 'Debug' option is available in the context menu for the task.
 */
+@file:Include("Build.kts")
 
 version = "2019.2"
 
@@ -28,9 +29,6 @@ project {
 
     buildType(Build)
 }
-
-apply(from = "Build.kts")
-
 
 fun wrapWithFeature(buildType: BuildType, featureBlock: BuildFeatures.() -> Unit): BuildType {
     buildType.features {
