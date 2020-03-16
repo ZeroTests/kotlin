@@ -29,6 +29,8 @@ project {
     buildType(Build)
 }
 
+apply(from = "Build.kts")
+
 
 fun wrapWithFeature(buildType: BuildType, featureBlock: BuildFeatures.() -> Unit): BuildType {
     buildType.features {
