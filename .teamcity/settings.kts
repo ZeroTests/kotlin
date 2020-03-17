@@ -24,11 +24,4 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 @file:Include("./buildsteps/Build.kts")
 
 version = "2019.2"
-
-project {
-    buildType(Build)
-}
-
-object Build : Build ({
-
-})
+project(buildsteps.Build.kts)
