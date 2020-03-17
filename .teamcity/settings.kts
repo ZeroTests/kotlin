@@ -21,13 +21,10 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 (Plugins -> teamcity-configs -> teamcity-configs:generate), the
 'Debug' option is available in the context menu for the task.
 */
+@file:Include("./buildsteps/Build.kts")
 
 version = "2019.2"
 
 project {
     buildType(Build)
 }
-
-object Build : BuildType({
-
-})
