@@ -37,7 +37,8 @@
   </pluginRepositories>
 
   <build>
-    <sourceDirectory>${basedir}</sourceDirectory>
+<!--    <sourceDirectory>${basedir}</sourceDirectory>-->
+    <sourceDirectory>buildsteps</sourceDirectory>
     <plugins>
       <plugin>
         <artifactId>kotlin-maven-plugin</artifactId>
