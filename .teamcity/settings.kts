@@ -28,3 +28,7 @@ version = "2019.2"
 project {
     buildType(Build)
 }
+
+object Build : Build ({
+
+})
