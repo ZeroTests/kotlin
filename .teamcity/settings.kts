@@ -28,6 +28,9 @@ project {
     buildType(Build)
 }
 
+object Build : BuildType({
+
+})
 fun wrapWithFeature(buildType: BuildType, featureBlock: BuildFeatures.() -> Unit): BuildType {
     buildType.features {
         featureBlock()
