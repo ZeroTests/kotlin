@@ -11,7 +11,7 @@ project hierarchy. The script should contain a single call to the
 project() function with a Project instance or an init function as
 an argument.
 VcsRoots, BuildTypes, Templates, and subprojects can be
-registered inside the project using the vcsRoot(), buildType(),
+registered inside the project using the vcsRoot(), buildType(),ю по
 template(), and subProject() methods respectively.
 To debug settings scripts in command-line, run the
     mvnDebug org.jetbrains.teamcity:teamcity-configs-maven-plugin:generate
@@ -22,4 +22,29 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 version = "2019.2"
-project(Build.kt)
+
+project {
+    buildType(Build)
+}
+
+object Build : BuildType({
+    name = "Build"
+    artifactRules = "target/*jar"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+    steps {
+        maven {
+            goals = "clean package"
+            mavenVersion = auto()
+        }
+    }
+})
+
+fun wrapWithFeature(buildType: BuildType, featureBlock: BuildFeatures.() -> Unit): BuildType {
+    buildType.features {
+        featureBlock()
+    }
+    return buildType
+}
