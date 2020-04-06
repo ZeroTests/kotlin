@@ -17,5 +17,15 @@ object Build : BuildType({
             goals = "clean package"
             mavenVersion = auto()
         }
+        dockerCommand {
+            name = "Build Image"
+            commandType = build {
+                source = file {
+                    path = "Dockerfile"
+                }
+                commandArgs = "--pull"
+            }
+            param("dockerImage.platform", "linux")
+        }
     }
 })
