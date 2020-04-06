@@ -4,6 +4,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.swabra
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2018_2.vcs.GitVcsRoot
+import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.dockerCommand
 
 object Build : BuildType({
     name = "Build"
