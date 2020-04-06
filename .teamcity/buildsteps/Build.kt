@@ -18,26 +18,4 @@ object Build : BuildType({
             mavenVersion = auto()
         }
     }
-    changeBuildType(RelativeId("Build")) {
-        expectSteps {
-            maven {
-                goals = "clean package"
-                mavenVersion = auto()
-            }
-        }
-        steps {
-            insert(1) {
-                dockerCommand {
-                    name = "Build Image"
-                    commandType = build {
-                        source = file {
-                            path = "Dockerfile"
-                        }
-                        commandArgs = "--pull"
-                    }
-                    param("dockerImage.platform", "linux")
-                }
-            }
-        }
-    }
 })
