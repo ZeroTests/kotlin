@@ -24,7 +24,7 @@ object Build : BuildType({
                 source = file {
                     path = "Dockerfile"
                 }
-                namesAndTags = "App_test"
+                namesAndTags = "app_test"
                 commandArgs = "--pull"
             }
             param("dockerImage.platform", "linux")
