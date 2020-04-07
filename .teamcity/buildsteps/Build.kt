@@ -8,6 +8,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.dockerCommand
 
 object Build : BuildType({
     name = "Build"
+    description = "test"
     artifactRules = "target/*jar"
 
     vcs {
